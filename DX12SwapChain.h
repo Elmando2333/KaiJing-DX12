@@ -3,6 +3,7 @@
 #include <d3d12.h>
 #include <dxgi1_6.h>
 #include <wrl/client.h>
+#include "DX12DescriptorHeap.h"
 
 
 class DX12SwapChain
@@ -50,6 +51,13 @@ public:
 
 	bool IsInitialized() const { return m_swapChain != nullptr; }
 
+
+
+
+	//龙书的创建渲染目标视图相关，先放到交换链类里去处理
+	bool CreateRTVs(ID3D12Device* device, DX12DescriptorHeap& rtvHeap);
+	D3D12_CPU_DESCRIPTOR_HANDLE GetCurrentRTVHandle(DX12DescriptorHeap& rtvHeap) const;
+	D3D12_CPU_DESCRIPTOR_HANDLE GetRTVHandle(UINT index,DX12DescriptorHeap& rtvHeap) const;
 
 
 private:
