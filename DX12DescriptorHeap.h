@@ -52,7 +52,7 @@ public:
 
 private:
 	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_heap;
-	D3D12_DESCRIPTOR_HEAP_TYPE m_type;
+	D3D12_DESCRIPTOR_HEAP_TYPE m_type{};
 	UINT m_numDescriptors = 0;
 	UINT m_descriptorSize = 0;
 

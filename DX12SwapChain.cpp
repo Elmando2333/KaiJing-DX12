@@ -1,4 +1,5 @@
 #include "DX12SwapChain.h"
+#include "DX12DepthStencilBuffer.h"
 
 DX12SwapChain::DX12SwapChain() = default;
 
@@ -49,6 +50,10 @@ bool DX12SwapChain::Initialize(IDXGIFactory4* factory, ID3D12CommandQueue* comma
 
 	return true;
 }
+
+
+
+
 
 bool DX12SwapChain::Resize(UINT width, UINT height)
 {

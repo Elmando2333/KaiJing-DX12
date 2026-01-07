@@ -30,6 +30,9 @@
     <ClCompile Include="DX12DescriptorHeap.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DX12DepthStencilBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX12Device.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DX12DescriptorHeap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DX12DepthStencilBuffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
