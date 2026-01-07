@@ -39,6 +39,7 @@ public:
 
 	//获取接口
 	IDXGISwapChain* Get() const { return m_swapChain.Get(); }
+	UINT GetBufferCount() const { return m_bufferCount; }
 
 	//获取格式
 	DXGI_FORMAT GetFormat() const { return m_backBufferFormat; }

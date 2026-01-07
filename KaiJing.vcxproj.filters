@@ -18,5 +18,31 @@
     <ClCompile Include="SplashScreen.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DX12Device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DX12Fence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DX12SwapChain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DX12DescriptorHeap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DX12Device.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DX12Fence.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DX12SwapChain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DX12DescriptorHeap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

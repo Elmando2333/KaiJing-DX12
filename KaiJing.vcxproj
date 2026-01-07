@@ -123,7 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DX12DescriptorHeap.cpp" />
+    <ClCompile Include="DX12Device.cpp" />
+    <ClCompile Include="DX12Fence.cpp" />
+    <ClCompile Include="DX12SwapChain.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DX12DescriptorHeap.h" />
+    <ClInclude Include="DX12Device.h" />
+    <ClInclude Include="DX12Fence.h" />
+    <ClInclude Include="DX12SwapChain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

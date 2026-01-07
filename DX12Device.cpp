@@ -7,6 +7,7 @@
 
 DX12Device& DX12Device::GetInstance()
 {
+	//TODO:这里是不是要再判断一下存不存在再开始创建？
 	static DX12Device instance;
 	return instance;
 }
@@ -144,6 +145,19 @@ bool DX12Device::Initialize(bool enableDebug)
 
 
 
+	
+
+
+	////这里初始化描述符堆,rtv这里注释掉了，因为想让rtv的创建跟着交换链走
+	//D3D12_DESCRIPTOR_HEAP_DESC rtvHeapDesc;
+	//rtvHeapDesc.NumDescriptors = m_swapChain.GetBufferCount();
+	//rtvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
+	//rtvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
+	//rtvHeapDesc.NodeMask = 0;
+
+
+
+
 
 
 	return true;
@@ -187,3 +201,5 @@ void DX12Device::ResetCommandList()
 	m_commandAllocator->Reset();
 	m_commandList->Reset(m_commandAllocator.Get(), nullptr);
 }
+
+

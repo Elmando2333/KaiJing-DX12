@@ -39,6 +39,11 @@ public :
 
 	void ResetCommandList();
 
+
+
+	
+
+
 private:
 	DX12Device() = default;
 	~DX12Device();
@@ -58,16 +63,18 @@ private:
 	Microsoft::WRL::ComPtr<ID3D12Debug> m_debugController;
 #endif
 
-
+	
 	//缓存描述符大小的
 	UINT m_rtvDescriptorSize=0;
 	UINT m_dsvDescriptorSize=0;
 	UINT m_cbvSrvUavDescriptorSize=0;
 
+	
 
+	//检查4xmsaa质量的
 	UINT m_msaa4xQualityLevel = 0;
 
-
+	
 
 	//命令和命令列表相关的成员
 	Microsoft::WRL::ComPtr<ID3D12CommandQueue> m_commandQueue;
