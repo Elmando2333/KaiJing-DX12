@@ -130,6 +130,9 @@
     <ClCompile Include="DX12Device.cpp" />
     <ClCompile Include="DX12Fence.cpp" />
     <ClCompile Include="DX12SwapChain.cpp" />
+    <ClCompile Include="DX12Viewport.cpp" />
+    <ClCompile Include="DX12ViewportUtils.cpp" />
+    <ClCompile Include="PerformanceTimer.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +143,12 @@
     <ClInclude Include="DX12Device.h" />
     <ClInclude Include="DX12Fence.h" />
     <ClInclude Include="DX12SwapChain.h" />
+    <ClInclude Include="DX12Viewport.h" />
+    <ClInclude Include="DX12ViewportUtils.h" />
+    <ClInclude Include="PerformanceTimer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
