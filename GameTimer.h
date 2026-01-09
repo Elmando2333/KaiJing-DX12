@@ -31,6 +31,7 @@ public:
 
 
 private:
+	//TODO：改成_int64的！
 	double m_secondsPerCount = 0.0;//构造里去调用性能计时器查询
 	double m_deltaTime = -1.0;
 

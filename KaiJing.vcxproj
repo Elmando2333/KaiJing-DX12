@@ -132,6 +132,7 @@
     <ClCompile Include="DX12SwapChain.cpp" />
     <ClCompile Include="DX12Viewport.cpp" />
     <ClCompile Include="DX12ViewportUtils.cpp" />
+    <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="PerformanceTimer.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
   </ItemGroup>
@@ -145,6 +146,7 @@
     <ClInclude Include="DX12SwapChain.h" />
     <ClInclude Include="DX12Viewport.h" />
     <ClInclude Include="DX12ViewportUtils.h" />
+    <ClInclude Include="GameTimer.h" />
     <ClInclude Include="PerformanceTimer.h" />
   </ItemGroup>
   <ItemGroup>
