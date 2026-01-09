@@ -20,10 +20,19 @@ namespace PerformanceTimer {
 	//初始化性能计时器
 	void Initialize()
 	{
+		static bool initialized = false;
+		if (initialized)
+		{
+			return;
+		}
+
+
 		LARGE_INTEGER countsPerSec;
 		QueryPerformanceFrequency(&countsPerSec);
 		s_frequency = countsPerSec.QuadPart;
 		s_secondsPerCount = 1.0 / static_cast<double>(countsPerSec.QuadPart);
+
+		initialized = true;
 	}
 
 
