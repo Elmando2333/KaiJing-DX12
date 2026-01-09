@@ -16,5 +16,23 @@ namespace PerformanceTimer
 	//获取频率
 	double GetFrequency();
 
+
+
+
+	//为了GameTimer的扩展：
+	_int64 GetCount();
+	_int64 GetDeltaCount(_int64 lastCount, _int64 currCount);
+
+
+	//转换
+	double CountsToSeconds(_int64 counts);
+
+	_int64 SecondsToCounts(double seconds);
+
+	_int64 GetFrequencyCounts(double seconds);
+
+	// 获取转换系数
+	double GetSecondsPerCount();
+
 }
 

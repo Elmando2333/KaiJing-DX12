@@ -13,9 +13,16 @@ public:
 	GameTimer& operator=(const GameTimer&) = delete;
 
 
-	float TotalTime() const;
+	float TotalTimeSeconds() const;
+	float DeltaTimeSeconds() const;
 	float DeltaTime() const;
 
+	//返回一下计数值版本
+	_int64 TotalTimeCounts() const;
+	_int64 DeltaTimeCounts() const;
+
+	
+		 
 
 	void Reset();
 	void Start();
@@ -30,17 +37,27 @@ public:
 	bool IsStopped() const { return m_isStopped; }
 
 
-private:
-	//TODO：改成_int64的！
-	double m_secondsPerCount = 0.0;//构造里去调用性能计时器查询
-	double m_deltaTime = -1.0;
 
-	//下面主要是实现stop和pause的相关计数
-	double m_baseTime = 0;//基准的时间，在reset里
-	double m_pausedTime = 0;//累积暂停的时间
-	double m_stopTime = 0;//记录暂停时或者停止时的计数
-	double m_prevTime = 0;//上一帧
-	double m_currTime = 0;//当前
+
+	float GetBaseTime() const;
+	float GetCurrentTime() const;
+	float GetPausedTime() const;
+
+	_int64 GetBaseTimeCounts() const { return m_baseCounts; }
+	_int64 GetCurrentTimeCounts() const { return m_currCounts; }
+	_int64 GetPausedTimeCounts() const { return m_pausedCounts; }
+
+
+private:
+	double m_secondsPerCount = 0.0;
+
+	_int64 m_deltaCounts = -1;
+
+	_int64 m_baseCounts = 0;
+	_int64 m_pausedCounts = 0;
+	_int64 m_stopCounts = 0;
+	_int64 m_prevCounts = 0;
+	_int64 m_currCounts = 0;
 
 	bool m_isPaused = false;
 	bool m_isStopped = false;

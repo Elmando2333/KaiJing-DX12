@@ -13,11 +13,16 @@ QueryPerformanceCounter是获取当前的计数值
 namespace PerformanceTimer {
 
 	static double s_secondsPerCount = 0.0;
+	static _int64 s_frequency = 0;
 
+	//下面是基础功能，返回的是时间double
+
+	//初始化性能计时器
 	void Initialize()
 	{
 		LARGE_INTEGER countsPerSec;
 		QueryPerformanceFrequency(&countsPerSec);
+		s_frequency = countsPerSec.QuadPart;
 		s_secondsPerCount = 1.0 / static_cast<double>(countsPerSec.QuadPart);
 	}
 
@@ -41,4 +46,49 @@ namespace PerformanceTimer {
 	{
 		return s_secondsPerCount;
 	}
+
+
+
+
+
+
+
+
+	_int64 GetCount()
+	{
+		LARGE_INTEGER currentTime;
+		QueryPerformanceCounter(&currentTime);
+		return currentTime.QuadPart;
+	}
+
+
+
+	_int64 GetDeltaCount(_int64 lastCount, _int64 currCount)
+	{
+		return currCount - lastCount;
+	}
+
+	double CountsToSeconds(_int64 counts)
+	{
+		return static_cast<double>(counts) * s_secondsPerCount;
+	}
+
+	_int64 SecondsToCounts(double seconds)
+	{
+		return static_cast<_int64>(seconds / s_secondsPerCount);
+	}
+
+	_int64 GetFrequencyCounts()
+	{
+		return s_frequency;
+	}
+
+	
+	double GetSecondsPerCount()
+	{
+		return s_secondsPerCount;
+	}
+
+
+
 }
