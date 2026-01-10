@@ -15,7 +15,7 @@ DX12DepthStencilBuffer::~DX12DepthStencilBuffer()
 bool DX12DepthStencilBuffer::Create(
 	UINT width,
 	UINT height,
-	DXGI_FORMAT format = DXGI_FORMAT_D24_UNORM_S8_UINT,
+	DXGI_FORMAT format,
 	UINT msaaCount,
 	UINT msaaQuality
 )

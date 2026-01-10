@@ -1,9 +1,14 @@
 #pragma once
+#pragma comment(lib, "d3d12.lib")
+#pragma comment(lib, "dxgi.lib")
 
 #include <d3d12.h>
 #include <dxgi1_6.h>
 #include <wrl/client.h>
 #include "DX12Fence.h"
+
+
+
 
 /*
 此代码是照着DX12龙书第四章给的参考初始化流程写的,后续还会修改

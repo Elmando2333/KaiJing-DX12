@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SplashScreen.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DX12Device.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -43,6 +40,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GameTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KJApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="KJUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,6 +81,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="GameTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KJApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KJUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestApp.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

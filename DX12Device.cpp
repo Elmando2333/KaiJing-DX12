@@ -198,6 +198,10 @@ DX12Device::~DX12Device()
 
 void DX12Device::ResetCommandList()
 {
+	if (!m_commandAllocator || !m_commandList)
+	{
+		return;
+	}
 	m_commandAllocator->Reset();
 	m_commandList->Reset(m_commandAllocator.Get(), nullptr);
 }
