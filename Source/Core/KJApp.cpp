@@ -285,7 +285,7 @@ void KJApp::OnResizeInternal()
 
 	m_viewport.Resize(static_cast<float>(m_clientWidth), static_cast<float>(m_clientHeight));
 
-	OnResize();
+	OnResize();//×¢Òâ×¢Òâ×¢Òâ£¡
 }
 
 LRESULT CALLBACK KJApp::WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)

@@ -37,6 +37,9 @@
     <Filter Include="Source\Timer">
       <UniqueIdentifier>{f5e59e8c-ceac-494c-b817-51f6d7b1b720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Shaders">
+      <UniqueIdentifier>{afae8fc7-72b6-46af-be2d-c8616b9fe866}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\KJApp.cpp">
@@ -170,5 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="BasicVS.hlsl">
+      <Filter>Source\Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
