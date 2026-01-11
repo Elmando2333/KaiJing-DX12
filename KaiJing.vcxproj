@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)ThirdParty\imgui;$(ProjectDir)ThirdParty\imgui\backends;$(ProjectDir)Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -116,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)ThirdParty\imgui;$(ProjectDir)ThirdParty\imgui\backends;$(ProjectDir)Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,37 +125,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DX12DepthStencilBuffer.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="DX12DescriptorHeap.cpp" />
-    <ClCompile Include="DX12Device.cpp" />
-    <ClCompile Include="DX12Fence.cpp" />
-    <ClCompile Include="DX12SwapChain.cpp" />
-    <ClCompile Include="DX12Viewport.cpp" />
-    <ClCompile Include="DX12ViewportUtils.cpp" />
-    <ClCompile Include="GameTimer.cpp" />
-    <ClCompile Include="KJApp.cpp" />
-    <ClCompile Include="KJUtil.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PerformanceTimer.cpp" />
-    <ClCompile Include="TestApp.cpp" />
+    <ClCompile Include="Source\App\main.cpp" />
+    <ClCompile Include="Source\App\TestApp.cpp" />
+    <ClCompile Include="Source\Core\KJApp.cpp" />
+    <ClCompile Include="Source\Core\KJUtil.cpp" />
+    <ClCompile Include="Source\DX12\DX12DepthStencilBuffer.cpp" />
+    <ClCompile Include="Source\DX12\DX12DescriptorHeap.cpp" />
+    <ClCompile Include="Source\DX12\DX12Device.cpp" />
+    <ClCompile Include="Source\DX12\DX12Fence.cpp" />
+    <ClCompile Include="Source\DX12\DX12SwapChain.cpp" />
+    <ClCompile Include="Source\DX12\DX12Viewport.cpp" />
+    <ClCompile Include="Source\DX12\DX12ViewportUtils.cpp" />
+    <ClCompile Include="Source\Timer\GameTimer.cpp" />
+    <ClCompile Include="Source\Timer\PerformanceTimer.cpp" />
+    <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp" />
+    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DX12DepthStencilBuffer.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="DX12DescriptorHeap.h" />
-    <ClInclude Include="DX12Device.h" />
-    <ClInclude Include="DX12Fence.h" />
-    <ClInclude Include="DX12SwapChain.h" />
-    <ClInclude Include="DX12Viewport.h" />
-    <ClInclude Include="DX12ViewportUtils.h" />
-    <ClInclude Include="GameTimer.h" />
-    <ClInclude Include="KJApp.h" />
-    <ClInclude Include="KJUtil.h" />
-    <ClInclude Include="PerformanceTimer.h" />
-    <ClInclude Include="TestApp.h" />
+    <ClInclude Include="Source\App\TestApp.h" />
+    <ClInclude Include="Source\Core\KJApp.h" />
+    <ClInclude Include="Source\Core\KJUtil.h" />
+    <ClInclude Include="Source\DX12\DX12DepthStencilBuffer.h" />
+    <ClInclude Include="Source\DX12\DX12DescriptorHeap.h" />
+    <ClInclude Include="Source\DX12\DX12Device.h" />
+    <ClInclude Include="Source\DX12\DX12Fence.h" />
+    <ClInclude Include="Source\DX12\DX12SwapChain.h" />
+    <ClInclude Include="Source\DX12\DX12Viewport.h" />
+    <ClInclude Include="Source\DX12\DX12ViewportUtils.h" />
+    <ClInclude Include="Source\Timer\GameTimer.h" />
+    <ClInclude Include="Source\Timer\PerformanceTimer.h" />
+    <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_dx12.h" />
+    <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="ThirdParty\imgui\imconfig.h" />
+    <ClInclude Include="ThirdParty\imgui\imgui.h" />
+    <ClInclude Include="ThirdParty\imgui\imgui_internal.h" />
+    <ClInclude Include="ThirdParty\imgui\imstb_rectpack.h" />
+    <ClInclude Include="ThirdParty\imgui\imstb_textedit.h" />
+    <ClInclude Include="ThirdParty\imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

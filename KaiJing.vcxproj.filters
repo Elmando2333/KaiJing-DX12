@@ -13,84 +13,153 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{2210fb98-3c81-47ff-b90b-376ece9b5a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\ImGui">
+      <UniqueIdentifier>{c4c257a7-9afd-4c30-bbf0-af6e05fa8dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\ImGui\Backends">
+      <UniqueIdentifier>{a524dfb2-aeb2-4a80-9308-2ac62a1557aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a9e27c3d-dd24-4067-af04-c63a8c34ceae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core">
+      <UniqueIdentifier>{98910ad1-2572-40a2-855d-a39a19c67faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\DX12">
+      <UniqueIdentifier>{5d059853-bf31-4c49-967c-0e8c60005e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\App">
+      <UniqueIdentifier>{1f7a258f-3c42-4a1c-a0d5-60396e567c7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Timer">
+      <UniqueIdentifier>{f5e59e8c-ceac-494c-b817-51f6d7b1b720}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DX12Device.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ThirdParty\imgui\imgui.cpp">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DX12Fence.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DX12SwapChain.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DX12DescriptorHeap.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DX12DepthStencilBuffer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="DX12Viewport.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\Core\KJApp.cpp">
+      <Filter>Source\Core</Filter>
     </ClCompile>
-    <ClCompile Include="DX12ViewportUtils.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\Core\KJUtil.cpp">
+      <Filter>Source\Core</Filter>
     </ClCompile>
-    <ClCompile Include="PerformanceTimer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12DepthStencilBuffer.cpp">
+      <Filter>Source\DX12</Filter>
     </ClCompile>
-    <ClCompile Include="GameTimer.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12DescriptorHeap.cpp">
+      <Filter>Source\DX12</Filter>
     </ClCompile>
-    <ClCompile Include="KJApp.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12Device.cpp">
+      <Filter>Source\DX12</Filter>
     </ClCompile>
-    <ClCompile Include="KJUtil.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12Fence.cpp">
+      <Filter>Source\DX12</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12SwapChain.cpp">
+      <Filter>Source\DX12</Filter>
     </ClCompile>
-    <ClCompile Include="TestApp.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\DX12\DX12Viewport.cpp">
+      <Filter>Source\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DX12\DX12ViewportUtils.cpp">
+      <Filter>Source\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\App\main.cpp">
+      <Filter>Source\App</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\App\TestApp.cpp">
+      <Filter>Source\App</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer\GameTimer.cpp">
+      <Filter>Source\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer\PerformanceTimer.cpp">
+      <Filter>Source\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_dx12.cpp">
+      <Filter>ThirdParty\ImGui\Backends</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_win32.cpp">
+      <Filter>ThirdParty\ImGui\Backends</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DX12Device.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imconfig.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12Fence.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imgui.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12SwapChain.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imgui_internal.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12DescriptorHeap.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imstb_rectpack.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12DepthStencilBuffer.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imstb_textedit.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12Viewport.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="ThirdParty\imgui\imstb_truetype.h">
+      <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="DX12ViewportUtils.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\Core\KJApp.h">
+      <Filter>Source\Core</Filter>
     </ClInclude>
-    <ClInclude Include="PerformanceTimer.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\Core\KJUtil.h">
+      <Filter>Source\Core</Filter>
     </ClInclude>
-    <ClInclude Include="GameTimer.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\DX12\DX12DepthStencilBuffer.h">
+      <Filter>Source\DX12</Filter>
     </ClInclude>
-    <ClInclude Include="KJApp.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\DX12\DX12DescriptorHeap.h">
+      <Filter>Source\DX12</Filter>
     </ClInclude>
-    <ClInclude Include="KJUtil.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\DX12\DX12Device.h">
+      <Filter>Source\DX12</Filter>
     </ClInclude>
-    <ClInclude Include="TestApp.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\DX12\DX12Fence.h">
+      <Filter>Source\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DX12\DX12SwapChain.h">
+      <Filter>Source\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DX12\DX12Viewport.h">
+      <Filter>Source\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DX12\DX12ViewportUtils.h">
+      <Filter>Source\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\App\TestApp.h">
+      <Filter>Source\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Timer\GameTimer.h">
+      <Filter>Source\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Timer\PerformanceTimer.h">
+      <Filter>Source\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_dx12.h">
+      <Filter>ThirdParty\ImGui\Backends</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_win32.h">
+      <Filter>ThirdParty\ImGui\Backends</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
