@@ -4,6 +4,9 @@
 #include <windowsx.h>
 #include <cstdio>
 #include <cstring>
+#include "imgui.h"
+#include "backends/imgui_impl_win32.h"
+#include "backends/imgui_impl_dx12.h"
 
 KJApp::KJApp(HINSTANCE hInstance)
 	: m_appInstance(hInstance)
@@ -315,6 +318,17 @@ LRESULT CALLBACK KJApp::WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
 
 LRESULT KJApp::HandleMessage(UINT msg, WPARAM wParam, LPARAM lParam)
 {
+	extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+	// 只有在 ImGui 已初始化后才让 ImGui 处理消息
+	// 这样可以避免在窗口创建阶段（ImGui 未初始化时）调用 ImGui 函数
+	if (m_imguiInitialized && ImGui::GetCurrentContext() != nullptr)
+	{
+		if (ImGui_ImplWin32_WndProcHandler(m_mainWindow, msg, wParam, lParam))
+			return true;
+	}
+
+
 	switch (msg)
 	{
 	case WM_ACTIVATE:

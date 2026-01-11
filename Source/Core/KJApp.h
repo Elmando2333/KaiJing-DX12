@@ -51,6 +51,10 @@ public:
 	void SetClientHeight(UINT height) { m_clientHeight = height; }
 
 protected:
+
+	bool m_imguiInitialized = false;
+	void SetImGuiInitialized(bool initialized) { m_imguiInitialized = initialized; }
+
 	//后面需要重写的虚函数
 	virtual bool Initialize();  //初始化，在窗口和DX12创建后调用
 	virtual void Update(float deltaTime);  //每帧更新逻辑

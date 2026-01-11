@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\App\EditorApp.cpp" />
     <ClCompile Include="Source\App\main.cpp" />
     <ClCompile Include="Source\App\TestApp.cpp" />
     <ClCompile Include="Source\Core\KJApp.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\App\EditorApp.h" />
     <ClInclude Include="Source\App\TestApp.h" />
     <ClInclude Include="Source\Core\KJApp.h" />
     <ClInclude Include="Source\Core\KJUtil.h" />
