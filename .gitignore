@@ -61,3 +61,6 @@ x86/
 *.cachefile
 *.VC.db
 *.VC.opendb
+
+.cursor/
+*.gitignore
