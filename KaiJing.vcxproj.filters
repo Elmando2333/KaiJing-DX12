@@ -40,6 +40,12 @@
     <Filter Include="Source\Shaders">
       <UniqueIdentifier>{afae8fc7-72b6-46af-be2d-c8616b9fe866}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Renderer">
+      <UniqueIdentifier>{704da267-f6fd-4fbf-861c-cbee9c82591a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Renderer\Core">
+      <UniqueIdentifier>{ce6b8c44-850d-467a-a59b-0931d5de95bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\KJApp.cpp">
@@ -104,6 +110,9 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
       <Filter>ThirdParty\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer\Core\ShaderManager.cpp">
+      <Filter>Source\Renderer\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,12 +179,18 @@
     <ClInclude Include="ThirdParty\imgui\imstb_truetype.h">
       <Filter>ThirdParty\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Renderer\Core\ShaderManager.h">
+      <Filter>Source\Renderer\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="BasicVS.hlsl">
+    <FxCompile Include="Source\Shaders\BasicPS.hlsl">
+      <Filter>Source\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Source\Shaders\BasicVS.hlsl">
       <Filter>Source\Shaders</Filter>
     </FxCompile>
   </ItemGroup>

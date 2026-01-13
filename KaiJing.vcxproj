@@ -137,6 +137,7 @@
     <ClCompile Include="Source\DX12\DX12SwapChain.cpp" />
     <ClCompile Include="Source\DX12\DX12Viewport.cpp" />
     <ClCompile Include="Source\DX12\DX12ViewportUtils.cpp" />
+    <ClCompile Include="Source\Renderer\Core\ShaderManager.cpp" />
     <ClCompile Include="Source\Timer\GameTimer.cpp" />
     <ClCompile Include="Source\Timer\PerformanceTimer.cpp" />
     <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_dx12.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Source\DX12\DX12SwapChain.h" />
     <ClInclude Include="Source\DX12\DX12Viewport.h" />
     <ClInclude Include="Source\DX12\DX12ViewportUtils.h" />
+    <ClInclude Include="Source\Renderer\Core\ShaderManager.h" />
     <ClInclude Include="Source\Timer\GameTimer.h" />
     <ClInclude Include="Source\Timer\PerformanceTimer.h" />
     <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_dx12.h" />
@@ -174,7 +176,14 @@
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="BasicVS.hlsl" />
+    <FxCompile Include="Source\Shaders\BasicPS.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="Source\Shaders\BasicVS.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
