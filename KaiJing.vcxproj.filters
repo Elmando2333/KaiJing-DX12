@@ -46,6 +46,12 @@
     <Filter Include="Source\Renderer\Core">
       <UniqueIdentifier>{ce6b8c44-850d-467a-a59b-0931d5de95bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Renderer\Resources">
+      <UniqueIdentifier>{1e88a75b-4988-4a46-92d3-fe58f584be3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\LittleTool">
+      <UniqueIdentifier>{b6842c30-4360-4354-86d8-c3a192d2c2be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Core\KJApp.cpp">
@@ -114,6 +120,12 @@
     <ClCompile Include="Source\Renderer\Core\ShaderManager.cpp">
       <Filter>Source\Renderer\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Renderer\Resources\VertexLayout.cpp">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="LRU.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ThirdParty\imgui\imconfig.h">
@@ -181,6 +193,12 @@
     </ClInclude>
     <ClInclude Include="Source\Renderer\Core\ShaderManager.h">
       <Filter>Source\Renderer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer\Resources\VertexLayout.h">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="LRU.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

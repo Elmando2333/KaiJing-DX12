@@ -42,9 +42,9 @@ public:
 		UINT slot = 0
 	);
 
-
+	//获取元素数量
 	UINT GetElementCount() const { return static_cast<UINT>(m_elements.size()); }
-
+	//获取元素
 	const VertexElement& GetElement(UINT index) const;
 
 
@@ -55,6 +55,19 @@ public:
 
 	UINT GetStride() const { return m_stride; }
 
+	//d3d12的布局，来获取dx的需要的输入来创建PSO
+	const D3D12_INPUT_ELEMENT_DESC* GetD3D12Layout() const;
+	UINT GetD3D12LayoutSize() const { return static_cast<UINT>(m_d3d12Layout.size()); }
+
+
+	//tool
+	bool IsValid() const { return !m_elements.empty() && m_stride > 0; }
+
+	void Clear();
+
+	//比较布局
+	bool operator==(const VertexLayout& other) const;
+	bool operator!=(const VertexLayout& other) const { return !(*this == other); }
 
 
 

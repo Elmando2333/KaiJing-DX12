@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LRU.cpp" />
     <ClCompile Include="Source\App\EditorApp.cpp" />
     <ClCompile Include="Source\App\main.cpp" />
     <ClCompile Include="Source\App\TestApp.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Source\DX12\DX12Viewport.cpp" />
     <ClCompile Include="Source\DX12\DX12ViewportUtils.cpp" />
     <ClCompile Include="Source\Renderer\Core\ShaderManager.cpp" />
+    <ClCompile Include="Source\Renderer\Resources\VertexLayout.cpp" />
     <ClCompile Include="Source\Timer\GameTimer.cpp" />
     <ClCompile Include="Source\Timer\PerformanceTimer.cpp" />
     <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_dx12.cpp" />
@@ -149,6 +151,7 @@
     <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LRU.h" />
     <ClInclude Include="Source\App\EditorApp.h" />
     <ClInclude Include="Source\App\TestApp.h" />
     <ClInclude Include="Source\Core\KJApp.h" />
@@ -161,6 +164,7 @@
     <ClInclude Include="Source\DX12\DX12Viewport.h" />
     <ClInclude Include="Source\DX12\DX12ViewportUtils.h" />
     <ClInclude Include="Source\Renderer\Core\ShaderManager.h" />
+    <ClInclude Include="Source\Renderer\Resources\VertexLayout.h" />
     <ClInclude Include="Source\Timer\GameTimer.h" />
     <ClInclude Include="Source\Timer\PerformanceTimer.h" />
     <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_dx12.h" />
