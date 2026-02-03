@@ -123,8 +123,14 @@
     <ClCompile Include="Source\Renderer\Resources\VertexLayout.cpp">
       <Filter>Source\Renderer\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="LRU.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Source\Renderer\Resources\VertexComponents.cpp">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer\Resources\Vertex.cpp">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer\Resources\VertexFactory.cpp">
+      <Filter>Source\Renderer\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,8 +203,14 @@
     <ClInclude Include="Source\Renderer\Resources\VertexLayout.h">
       <Filter>Source\Renderer\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="LRU.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Source\Renderer\Resources\VertexComponents.h">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer\Resources\VertexFactory.h">
+      <Filter>Source\Renderer\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer\Resources\Vertex.h">
+      <Filter>Source\Renderer\Resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

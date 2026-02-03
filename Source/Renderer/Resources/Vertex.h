@@ -10,7 +10,7 @@ struct SVertex;
 
 
 //先特化
-
+//第一次写模板，先标注一下，后面可能还要改
 //特化1：特化单个组件
 template<typename Component>
 struct SVertex<Component>
@@ -112,39 +112,44 @@ private:
 
 
 
-	//写些常用顶点类型：
-	using SPositionColorVertex = SVertex<
-		VertexComponents::Position,
-		VertexComponents::Color
-	>;
-
-	using SPositionNormalTexVertex = SVertex<
-		VertexComponents::Position,
-		VertexComponents::Normal,
-		VertexComponents::TexCoord
-	>;
-
-	using SPositionNormalTexTangentVertex = SVertex<
-		VertexComponents::Position,
-		VertexComponents::Normal,
-		VertexComponents::TexCoord,
-		VertexComponents::Tangent
-	>;
-
-
-	using SPositionNormalTexTangentBinormalVertex = SVertex<
-		VertexComponents::Position,
-		VertexComponents::Normal,
-		VertexComponents::TexCoord,
-		VertexComponents::Tangent,
-		VertexComponents::Binormal
-	>;
-
-	using SPositionColorNormalTexVertex = SVertex<
-		VertexComponents::Position,
-		VertexComponents::Color,
-		VertexComponents::Normal,
-		VertexComponents::TexCoord
-	>;
+	
 
 };
+
+
+
+
+//写些常用顶点类型：
+using SPositionColorVertex = SVertex<
+	VertexComponents::Position,
+	VertexComponents::Color
+>;
+
+using SPositionNormalTexVertex = SVertex<
+	VertexComponents::Position,
+	VertexComponents::Normal,
+	VertexComponents::TexCoord
+>;
+
+using SPositionNormalTexTangentVertex = SVertex<
+	VertexComponents::Position,
+	VertexComponents::Normal,
+	VertexComponents::TexCoord,
+	VertexComponents::Tangent
+>;
+
+
+using SPositionNormalTexTangentBinormalVertex = SVertex<
+	VertexComponents::Position,
+	VertexComponents::Normal,
+	VertexComponents::TexCoord,
+	VertexComponents::Tangent,
+	VertexComponents::Binormal
+>;
+
+using SPositionColorNormalTexVertex = SVertex<
+	VertexComponents::Position,
+	VertexComponents::Color,
+	VertexComponents::Normal,
+	VertexComponents::TexCoord
+>;
