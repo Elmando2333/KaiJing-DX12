@@ -1,155 +1,129 @@
+// Vertex.h
 #pragma once
 #include "Renderer/Resources/VertexComponents.h"
 #include "Renderer/Resources/VertexLayout.h"
 #include <cstddef>
 
-//我要革命！UE把结构体前缀竟然写成F，我就要改成S！
-
+/**
+ * @brief 顶点模板 - 使用组件组合定义顶点类型
+ */
 template<typename... Components>
 struct SVertex;
 
-
-//先特化
-//第一次写模板，先标注一下，后面可能还要改
-//特化1：特化单个组件
+// 特化1：单个组件
 template<typename Component>
 struct SVertex<Component>
 {
-	Component component;
+    Component component;
 
-	static VertexLayout GetLayout()
-	{
-		VertexLayout layout;
-		layout.AddElement(
-			Component::SemanticName,
-			Component::Format,
-			offsetof(SVertex, component)
-		);
-		layout.CalculateStride();
-		return layout;
-	}
+    static VertexLayout GetLayout()
+    {
+        VertexLayout layout;
+        layout.AddElement(
+            Component::SemanticName,
+            Component::Format,
+            offsetof(SVertex, component),
+            Component::SemanticIndex
+        );
+        layout.CalculateStride();
+        return layout;
+    }
 
-	static constexpr UINT GetStride()
-	{
-		return sizeof(SVertex);
-	}
+    static constexpr uint32_t GetStride()
+    {
+        return sizeof(SVertex);
+    }
 };
 
-
-
-
-//特化2，多个组件递归
-template<typename First,typename... Rest>
+// 特化2：多个组件递归
+template<typename First, typename... Rest>
 struct SVertex<First, Rest...>
 {
-	First first;
-	SVertex<Rest...> rest;
+    First first;
+    SVertex<Rest...> rest;
 
+    static VertexLayout GetLayout()
+    {
+        VertexLayout layout;
+        BuildLayoutRecursive<First, Rest...>(layout, 0);
+        layout.CalculateStride();
+        return layout;
+    }
 
-	//获取布局
-	static VertexLayout GetLayout()
-	{
-		VertexLayout layout;
-		BuildLayoutRecursive<First, Rest...>(layout, 0);
-		layout.CalculateStride();
-		return layout;
-	}
-
-	//顶点步长
-	static constexpr UINT GetStride()
-	{
-		return sizeof(SVertex);
-	}
+    static constexpr uint32_t GetStride()
+    {
+        return sizeof(SVertex);
+    }
 
 private:
-	template<typename T>
-	static void BuildLayoutRecursive(VertexLayout& layout, UINT currentOffset)
-	{
-		//计算当前组件在结构体中的实际偏移
-		SVertex<T> temp;
-		UINT offset = static_cast<UINT>(reinterpret_cast<const char*>(&temp.component) -
-			reinterpret_cast<const char*>(&temp));
+    template<typename T>
+    static void BuildLayoutRecursive(VertexLayout& layout, uint32_t currentOffset)
+    {
+        uint32_t semanticIndex = 0;
+        if constexpr (requires { T::SemanticIndex; })
+        {
+            semanticIndex = T::SemanticIndex;
+        }
 
+        layout.AddElement(
+            T::SemanticName,
+            T::Format,
+            currentOffset,
+            semanticIndex
+        );
+    }
 
-		UINT semanticIndex = 0;
-		if constexpr (requires { T::SemanticIndex; })
-		{
-			semanticIndex = T::SemanticIndex;
-		}
+    template<typename T, typename U, typename... Args>
+    static void BuildLayoutRecursive(VertexLayout& layout, uint32_t currentOffset)
+    {
+        uint32_t semanticIndex = 0;
+        if constexpr (requires { T::SemanticIndex; })
+        {
+            semanticIndex = T::SemanticIndex;
+        }
 
+        layout.AddElement(
+            T::SemanticName,
+            T::Format,
+            currentOffset,
+            semanticIndex
+        );
 
-		layout.AddElement(
-			T::SemanticName,
-			T::Format,
-			currentOffset,
-			semanticIndex
-		);
-
-	}
-
-
-
-	template<typename T, typename U, typename... Args>
-	static void BuildLayoutRecursive(VertexLayout& layout, UINT currentOffset)
-	{
-		// 添加当前组件
-		UINT semanticIndex = 0;
-		if constexpr (requires { T::SemanticIndex; })
-		{
-			semanticIndex = T::SemanticIndex;
-		}
-
-		layout.AddElement(
-			T::SemanticName,
-			T::Format,
-			currentOffset,
-			semanticIndex
-		);
-
-		// 递归处理
-		BuildLayoutRecursive<U, Args...>(layout, currentOffset + T::Size);
-	}
-
-
-
-	
-
+        // 递归处理下一个组件
+        BuildLayoutRecursive<U, Args...>(layout, currentOffset + T::Size);
+    }
 };
 
-
-
-
-//写些常用顶点类型：
+// 常用顶点类型定义
 using SPositionColorVertex = SVertex<
-	VertexComponents::Position,
-	VertexComponents::Color
+    VertexComponents::Position,
+    VertexComponents::Color
 >;
 
 using SPositionNormalTexVertex = SVertex<
-	VertexComponents::Position,
-	VertexComponents::Normal,
-	VertexComponents::TexCoord
+    VertexComponents::Position,
+    VertexComponents::Normal,
+    VertexComponents::TexCoord
 >;
 
 using SPositionNormalTexTangentVertex = SVertex<
-	VertexComponents::Position,
-	VertexComponents::Normal,
-	VertexComponents::TexCoord,
-	VertexComponents::Tangent
+    VertexComponents::Position,
+    VertexComponents::Normal,
+    VertexComponents::TexCoord,
+    VertexComponents::Tangent
 >;
 
-
 using SPositionNormalTexTangentBinormalVertex = SVertex<
-	VertexComponents::Position,
-	VertexComponents::Normal,
-	VertexComponents::TexCoord,
-	VertexComponents::Tangent,
-	VertexComponents::Binormal
+    VertexComponents::Position,
+    VertexComponents::Normal,
+    VertexComponents::TexCoord,
+    VertexComponents::Tangent,
+    VertexComponents::Binormal
 >;
 
 using SPositionColorNormalTexVertex = SVertex<
-	VertexComponents::Position,
-	VertexComponents::Color,
-	VertexComponents::Normal,
-	VertexComponents::TexCoord
+    VertexComponents::Position,
+    VertexComponents::Color,
+    VertexComponents::Normal,
+    VertexComponents::TexCoord
 >;

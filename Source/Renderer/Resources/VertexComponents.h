@@ -1,100 +1,101 @@
+// VertexComponents.h
 #pragma once
-#include <DirectXMath.h>
-#include <d3d12.h>
+#include "Renderer/Resources/VertexFormat.h"
+#include <cstdint>
 
-
-//这个是模拟仿照UE的顶点风格写的，同时希望后面用模板来减少代码重复的问题
-
-
-
+/**
+ * @brief 顶点组件命名空间
+ * @details 定义各种顶点组件，使用标准C++类型，完全API无关
+ */
 namespace VertexComponents
 {
-	// =======基础的组件（位置，颜色，法向量等等之类的）
+    /**
+     * @brief 位置组件
+     */
+    struct Position
+    {
+        float x, y, z;
 
+        static constexpr const char* SemanticName = "POSITION";
+        static constexpr VertexFormat Format = VertexFormat::Float3;
+        static constexpr uint32_t Size = sizeof(float) * 3;
+    };
 
+    /**
+     * @brief 颜色组件
+     */
+    struct Color
+    {
+        float r, g, b, a;
 
-	//位置
-	struct Position
-	{
-		DirectX::XMFLOAT3 Value;
+        static constexpr const char* SemanticName = "COLOR";
+        static constexpr VertexFormat Format = VertexFormat::Float4;
+        static constexpr uint32_t Size = sizeof(float) * 4;
+    };
 
-		static constexpr const char* SemanticName = "POSITION";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32B32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT3);
-	};
+    /**
+     * @brief 法线组件
+     */
+    struct Normal
+    {
+        float x, y, z;
 
-	//颜色
-	struct Color
-	{
-		DirectX::XMFLOAT4 Value;
+        static constexpr const char* SemanticName = "NORMAL";
+        static constexpr VertexFormat Format = VertexFormat::Float3;
+        static constexpr uint32_t Size = sizeof(float) * 3;
+    };
 
-		static constexpr const char* SemanticName = "COLOR";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT4);
-	};
+    /**
+     * @brief 纹理坐标组件
+     */
+    struct TexCoord
+    {
+        float u, v;
 
+        static constexpr const char* SemanticName = "TEXCOORD";
+        static constexpr VertexFormat Format = VertexFormat::Float2;
+        static constexpr uint32_t Size = sizeof(float) * 2;
+        static constexpr uint32_t SemanticIndex = 0;  // 可以支持多个UV
+    };
 
-	//法线
-	struct Normal
-	{
-		DirectX::XMFLOAT3 Value;
+    /**
+     * @brief 第二套纹理坐标
+     */
+    struct TexCoord1
+    {
+        float u, v;
 
-		static constexpr const char* SemanticName = "NORMAL";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32B32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT3);
-	};
+        static constexpr const char* SemanticName = "TEXCOORD";
+        static constexpr VertexFormat Format = VertexFormat::Float2;
+        static constexpr uint32_t Size = sizeof(float) * 2;
+        static constexpr uint32_t SemanticIndex = 1;
+    };
 
+    /**
+     * @brief 切线组件
+     */
+    struct Tangent
+    {
+        float x, y, z;
 
-	//纹理坐标
-	struct TexCoord
-	{
-		DirectX::XMFLOAT2 Value;
+        static constexpr const char* SemanticName = "TANGENT";
+        static constexpr VertexFormat Format = VertexFormat::Float3;
+        static constexpr uint32_t Size = sizeof(float) * 3;
+    };
 
-		static constexpr const char* SemanticName = "TEXCOORD";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT2); 
-	};
+    /**
+     * @brief 副切线组件（双法线）
+     */
+    struct Binormal
+    {
+        float x, y, z;
 
-	
-	//切线
-	struct Tangent
-	{
-		DirectX::XMFLOAT3 Value;
+        static constexpr const char* SemanticName = "BINORMAL";
+        static constexpr VertexFormat Format = VertexFormat::Float3;
+        static constexpr uint32_t Size = sizeof(float) * 3;
+    };
 
-		static constexpr const char* SemanticName = "TANGENT";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32B32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT3);
-	};
-
-	//副的切线，双发现，法线贴图的
-	struct Binormal
-	{
-		DirectX::XMFLOAT3 Value;
-
-		static constexpr const char* SemanticName = "BINORMAL";
-		static constexpr DXGI_FORMAT Format = DXGI_FORMAT_R32G32B32_FLOAT;
-		static constexpr UINT Size = sizeof(DirectX::XMFLOAT3);
-	};
-
-
-	//==========牛b的高级组件
-	struct BoneWeights
-	{
-		//TODO：以后用到再写
-	};
-
-	struct BoneIndices
-	{
-		//TODO：以后用到再写
-	};
-
-	//====扩展的组件
-
-	//第二套纹理
-	struct TexCoord1
-	{
-		//TODO：以后用到再写
-	};
-
-	//实例数据，颜色，后面再说
+    // TODO: 骨骼动画相关组件
+    // struct BoneWeights { ... };
+    // struct BoneIndices { ... };
 }
